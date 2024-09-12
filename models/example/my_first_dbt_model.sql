@@ -13,11 +13,11 @@ with source_data as (
 
     select 1 
     union all
-    select null as id
+    select null 
 
 )
 
-select *
+select 
 from 
 
 /*
