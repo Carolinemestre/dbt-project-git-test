@@ -11,14 +11,14 @@
 
 with source_data as (
 
-    select 1 as id
+    select 1 
     union all
     select null as id
 
 )
 
 select *
-from source_data
+from 
 
 /*
     Uncomment the line below to remove records with null `id` values
