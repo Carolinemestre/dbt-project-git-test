@@ -1,0 +1,30 @@
+name: DBT CI
+
+on:
+  push:
+    branches:
+      - main  # Remplace par la branche que tu veux surveiller
+
+jobs:
+  run-dbt:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: Install dependencies
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+        pip install dbt
+
+    - name: Run DBT models
+      run: |
+        source venv/bin/activate
+        dbt run
